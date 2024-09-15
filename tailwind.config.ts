@@ -1,3 +1,4 @@
+import { Inter } from "next/font/google";
 import type { Config } from "tailwindcss";
 const {nextui} = require("@nextui-org/react");
 const config: Config = {
@@ -9,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        Inter:["var(--font-inter)"]
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
