@@ -30,7 +30,7 @@ const Navigation = ({ activeItem }: Props) => {
                 navItems.map(({ title, href }, index) => {
                     return (
                         <div key = {title}>
-                            <h5 className={`inline-block md:px-4 xl:px-8 py-5 md:py-0 text-[18px] font-[500] font-Inter ${activeItem === index && 'text-[#6dff4b]'}`}>
+                            <h5 className={`inline-block md:px-4 xl:px-8 py-5 md:py-0 text-[18px] font-[500] font-Inter ${activeItem === index && 'text-[rgb(255,100,26)]'}`}>
                                 {title}
                             </h5>
                         </div>

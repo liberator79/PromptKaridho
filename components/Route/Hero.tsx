@@ -41,7 +41,7 @@ const Hero = () => {
     <div className='w-full md:min-h-screen flex items-center justify-center'>
       <div>
         <h1 className='font-Inter py-5 text-4xl xl:text-7xl 2xl:text-8xl  font-[700] text-center xl:leading-[80px] 2xl:leading-[100px] sm:mt-20'>
-          Buy <span className='text-[#64ff4b] '>AI Images</span> With<br /><span className='text-[#64ff4b] '>Prompt</span>Karido
+          Buy <span className='text-[rgb(255,100,26)] '>AI Prompts</span> From <br/> <span className='text-[rgb(255,100,26)] '>Prompt</span>Karido
         </h1>
         <div className='md:mt-5'>
           <Image

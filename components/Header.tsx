@@ -35,7 +35,7 @@ const Header = ({ activeItem }: Props) => {
                 <div>
                     <Link href={"/"}>
                         <h1 className='font-Inter text-3xl cursor-pointer'>
-                            <span className='text-[#64ff4c]'>Prompt</span>Karido
+                            <span className='text-[rgb(255,100,26)]'>Prompt</span>Karido
                         </h1>
                     </Link>
                 </div>
