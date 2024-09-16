@@ -34,7 +34,7 @@ const Header = ({ activeItem }: Props) => {
             <div className='hidden md:w-[90%] mx-auto md:flex items-center justify-between'>
                 <div>
                     <Link href={"/"}>
-                        <h1 className=' text-3xl cursor-pointer'>
+                        <h1 className='font-Inter text-3xl cursor-pointer'>
                             <span className='text-[#64ff4c]'>Prompt</span>Karido
                         </h1>
                     </Link>
@@ -54,7 +54,7 @@ const Header = ({ activeItem }: Props) => {
             <div className='w-full md:hidden flex items-center justify-between'>
                 <div>
                     <Link href={"/"}>
-                        <h1 className=' text-3xl cursor-pointer'>
+                        <h1 className='font-Inter text-3xl cursor-pointer'>
                             <span className='text-[#64ff4c]'>Prompt</span>Karido
                         </h1>
                     </Link>
@@ -67,11 +67,11 @@ const Header = ({ activeItem }: Props) => {
                 </div>
                 {
                     open && (
-                        <div className='fixed md:hidden w-full h-screen top-0 left-0 z-[9999] bg-[unset]'
+                        <div className='fixed md:hidden w-full h-full top-0 left-0 z-40 bg-[unset]'
                             onClick={handleClose}
                             id="screen"
                         >
-                            <div className='fixed bg-black h-screen top-0 right-0 w-[60%] z-[9999]'>
+                            <div className='fixed bg-black h-full top-0 right-0 w-[60%] z-10'>
                                 <div className='mt-20 p-5'>
                                     <Navigation activeItem={activeItem}/>
                                 </div>
