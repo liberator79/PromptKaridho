@@ -16,7 +16,7 @@ const Header = ({ activeItem }: Props) => {
     const [open, setOpen] = useState(false);
     if (typeof window !== 'undefined') {
         window.addEventListener('scroll', () => {
-            if (window.screenY > 100) {
+            if (window.scrollY > 10) {
                 setActive(true);
             } else {
                 setActive(false);
@@ -30,11 +30,11 @@ const Header = ({ activeItem }: Props) => {
         }
     }
     return (
-        <div className={`w-full p-5 border-b min-h-[60px] border-b-[#ffffff32] ${active && "fixed top-0 left-0 bg-[#00000] z-[9999]"}`}>
+        <div className={`w-full p-5 border-b min-h-[60px]  border-b-[#ffffff32] ${active && "fixed top-0 left-0 bg-[#000] z-[999]"}`}>
             <div className='hidden md:w-[90%] mx-auto md:flex items-center justify-between'>
                 <div>
                     <Link href={"/"}>
-                        <h1 className='font-Inter text-3xl cursor-pointer'>
+                        <h1 className='font-Inter text-3xl cursor-pointer font-[700]'>
                             <span className='text-[rgb(255,100,26)]'>Prompt</span>Karido
                         </h1>
                     </Link>
@@ -54,8 +54,8 @@ const Header = ({ activeItem }: Props) => {
             <div className='w-full md:hidden flex items-center justify-between'>
                 <div>
                     <Link href={"/"}>
-                        <h1 className='font-Inter text-3xl cursor-pointer'>
-                            <span className='text-[#64ff4c]'>Prompt</span>Karido
+                        <h1 className='font-Inter text-3xl cursor-pointer font-[700]'>
+                            <span className='text-[rgb(255,100,26)]'>Prompt</span>Karido
                         </h1>
                     </Link>
                 </div>
