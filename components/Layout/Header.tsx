@@ -5,13 +5,15 @@ import Navigation from "./Navigation"
 import { AiOutlineSearch } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { FaBars } from "react-icons/fa";
-
-
+import { UserButton } from '@clerk/nextjs'
+import { User } from '@clerk/nextjs/server';
 type Props = {
     activeItem: number
+    user: User | null
 }
 
-const Header = ({ activeItem }: Props) => {
+const Header = ({ activeItem, user }: Props) => {
+    console.log(user);
     const [active, setActive] = useState(false);
     const [open, setOpen] = useState(false);
     if (typeof window !== 'undefined') {
@@ -30,7 +32,7 @@ const Header = ({ activeItem }: Props) => {
         }
     }
     return (
-        <div className={`w-full p-5 border-b min-h-[60px]  border-b-[#ffffff32] ${active && "fixed top-0 left-0 bg-[#000] z-[999]"}`}>
+        <div className={`w-full p-5 border-b min-h-[60px]  border-b-[#ffffff32] ${active && "fixed top-0 left-0 bg-[#000] bg-opacity-80 z-[999]"}`}>
             <div className='hidden md:w-[90%] mx-auto md:flex items-center justify-between'>
                 <div>
                     <Link href={"/"}>
@@ -45,9 +47,15 @@ const Header = ({ activeItem }: Props) => {
                 <div className='flex items-center ml-10'>
                     <AiOutlineSearch className='text-[25px] mr-5 cursor-pointer' />
                     {/* Auth */}
-                    <Link href={"/signin"}>
-                        <CgProfile className='text-[25px] cursor-pointer' />
-                    </Link>
+                    {
+                        user ?
+                            <UserButton />
+                            :
+                            <Link href={"/sign-in"}>
+                                <CgProfile className='text-[25px] cursor-pointer' />
+                            </Link>
+
+                    }
                 </div>
             </div>
             {/*for mobile devices */}
@@ -73,7 +81,7 @@ const Header = ({ activeItem }: Props) => {
                         >
                             <div className='fixed bg-black h-full top-0 right-0 w-[60%] z-10'>
                                 <div className='mt-20 p-5'>
-                                    <Navigation activeItem={activeItem}/>
+                                    <Navigation activeItem={activeItem} />
                                 </div>
                             </div>
                         </div>

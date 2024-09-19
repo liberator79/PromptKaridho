@@ -1,15 +1,32 @@
 "use client"
-import Header from "@/components/Header";
+import Header from "@/components/Layout/Header";
 import Hero from "@/components/Route/Hero"
 import About from "@/components/Route/About"
 import Image from "next/image";
 import PromptCard from "@/components/Prompts/PromptCard"
+import BestSellers from "@/components/Shop/BestSellers"
+import Future from "@/components/Route/Future"
+import Partners from "@/components/Route/Partners"
+import SellerBanner from "@/components/Shop/SellerBanner";
+import Footer from "@/components/Layout/Footer"
 import { styles } from "@/utils/styles";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 export default function Home() {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    axios.get("/api/me").then((res)=>{
+      //console.log(res.data);
+      setUser(res.data)
+    }).catch((err) =>{
+      console.log(err);
+    })
+  }, []);
   return (
     <div>
       <div className="banner">
-        <Header activeItem={0} />
+        <Header activeItem={0} user = {user}/>
         <Hero />
       </div>
       <div>
@@ -33,6 +50,14 @@ export default function Home() {
             <PromptCard />
             <PromptCard />
           </div>
+          <br />
+          <BestSellers />
+          <Future />
+          <Partners />
+          <SellerBanner />
+          <br />
+          <br />
+          <Footer />
         </div>
       </div>
 
