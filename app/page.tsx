@@ -12,19 +12,29 @@ import Footer from "@/components/Layout/Footer"
 import { styles } from "@/utils/styles";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import Loader from "@/utils/Loader";
 export default function Home() {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     axios.get("/api/me").then((res)=>{
-      //console.log(res.data);
-      setUser(res.data)
+      setUser(res.data.user)
     }).catch((err) =>{
       console.log(err);
+    }).finally(() => {
+      setLoading(false);
     })
   }, []);
   return (
-    <div>
+    <>
+      {
+        loading ? 
+        <>
+          <Loader />
+        </>
+        :
+        <div>
       <div className="banner">
         <Header activeItem={0} user = {user}/>
         <Hero />
@@ -62,5 +72,7 @@ export default function Home() {
       </div>
 
     </div>
+      }
+    </> 
   );
 }
