@@ -12,6 +12,7 @@ import React from "react";
 import { CiShop } from "react-icons/ci";
 import { User } from "@clerk/nextjs/server";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 type Props = {
   user: User | null;
   setOpen: (open: boolean) => void;
@@ -54,14 +55,16 @@ const DropDown = ({ user, setOpen, handleProfile, isSellerExist }: Props) => {
           </div>
         </DropdownItem>
         <DropdownItem className={`${!isSellerExist && "hidden"}`}>
-          <div className="w-full flex items-center justify-between">
-            <div>
-              <CiShop className="text-xl text-black font-bold" />
+          <Link href={"/my-shop"}>
+            <div className="w-full flex items-center justify-between">
+              <div>
+                <CiShop className="text-xl text-black font-bold" />
+              </div>
+              <span className={`${styles.label} text-black text-[16px] pl-2`}>
+                Shop
+              </span>
             </div>
-            <span className={`${styles.label} text-black text-[16px] pl-2`}>
-              Shop
-            </span>
-          </div>
+          </Link>
         </DropdownItem>
         <DropdownItem onClick={handleLogOut}>
           <div className="w-full flex items-center justify-between">

@@ -13,13 +13,13 @@ import { TbXboxXFilled } from "react-icons/tb";
 type Props = {
   activeItem: number;
   user: User | null;
+  isSellerExist: boolean;
 };
 
-const Header = ({ activeItem, user }: Props) => {
+const Header = ({ activeItem, user, isSellerExist }: Props) => {
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeProfile, setActiveProfile] = useState(false);
-  const [isSellerExist, setSellerExist] = useState(false);
 
   // Scroll event handler
   useEffect(() => {
