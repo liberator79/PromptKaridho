@@ -4,9 +4,8 @@ import { User, currentUser } from "@clerk/nextjs/server";
 export async function GET(req: NextRequest) {
   try {
     const user: User | null = await currentUser();
-    if (!user) return new NextResponse("Login", { status: 401 });
     const sellerId = user?.id;
-    const prompts = prisma.prompts.findMany({
+    const prompts = await prisma.prompts.findMany({
       where: {
         sellerId,
       },

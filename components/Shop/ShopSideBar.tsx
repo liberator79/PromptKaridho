@@ -1,4 +1,3 @@
-import { styles } from "@/utils/styles";
 import Link from "next/link";
 import React from "react";
 import { BiMoneyWithdraw } from "react-icons/bi";
