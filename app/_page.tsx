@@ -14,8 +14,9 @@ import { User } from "@clerk/nextjs/server";
 type Props = {
   user: User | undefined;
   isSellerExist: boolean | undefined;
+  promptsData: any;
 };
-export default function RootPage({ user, isSellerExist }: Props) {
+export default function RootPage({ user, isSellerExist, promptsData }: Props) {
   return (
     <div>
       <div className="banner">
@@ -37,9 +38,9 @@ export default function RootPage({ user, isSellerExist }: Props) {
         <div>
           <h1 className={`${styles.heading} p-2 `}>Latest Prompts</h1>
           <div className="md:flex flex-wrap">
-            <PromptCard />
-            <PromptCard />
-            <PromptCard />
+            {promptsData.map((prompt: any) => {
+              return <PromptCard key={prompt.id} prompt={prompt} />;
+            })}
           </div>
           <br />
           <BestSellers />
