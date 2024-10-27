@@ -5,7 +5,6 @@ import prisma from "@/lib/prismaDb";
 export async function getUser() {
   try {
     const user: User | null = await currentUser();
-    console.log(await currentUser());
     if (!user) {
       return;
     }
