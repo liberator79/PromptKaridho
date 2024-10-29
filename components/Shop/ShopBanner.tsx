@@ -2,9 +2,12 @@ import { styles } from "@/utils/styles";
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
+type Props = {
+  promptData: any;
+};
 
-const ShopBanner = (props: Props) => {
+const ShopBanner = ({ promptData }: Props) => {
+  console.log(promptData);
   return (
     <div className="w-full h-full flex items-center justify-center relative gap-2">
       <div className="">
@@ -19,7 +22,7 @@ const ShopBanner = (props: Props) => {
         />
       </div>
       <h4 className={`${styles.heading} font-Inter xl:text-6xl 2xl:text-7xl`}>
-        Update with prop
+        {promptData?.name}
       </h4>
       <div>
         <Image

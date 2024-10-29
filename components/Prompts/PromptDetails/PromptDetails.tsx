@@ -2,6 +2,7 @@ import { styles } from "@/utils/styles";
 import React from "react";
 import SellerBanner from "../../Shop/SellerBanner";
 import PromptDetailsCard from "./PromptDetailsCard";
+import PromptInformation from "./PromptInformation";
 type Props = {
   promptData: any;
 };
@@ -12,7 +13,7 @@ const PromptDetails = ({ promptData }: Props) => {
       <PromptDetailsCard promptData={promptData} />
       <br />
       <br />
-      {/* Prompy details */}
+      <PromptInformation promptData={promptData} />
       <br />
       <h1 className={`${styles.heading} px-2 pb-2`}>Related Prompts</h1>
       <br />

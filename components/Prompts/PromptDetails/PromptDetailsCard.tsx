@@ -22,7 +22,7 @@ const PromptDetailsCard = ({ promptData }: Props) => {
   return (
     <div className="bg-[#1211023] p-3 w-full min-h-[50vh] shadow rounded-xl mt-8">
       <div className="w-full flex flex-wrap">
-        <div className="md:w-[48%] w-full m-2 bg-[#270c07] rounded-lg">
+        <div className="md:w-[48%] w-full m-2  shadow-sm shadow-[rgb(255,100,26)]  rounded-lg">
           <div className="">
             <Image
               alt=""
@@ -93,9 +93,12 @@ const PromptDetailsCard = ({ promptData }: Props) => {
             </span>
             <br />
             <div>
-              {tagsList.map((tag: string) => {
+              {tagsList.map((tag: string, id: number) => {
                 return (
-                  <Chip className="bg-[rgb(177,91,51)] rounded-md h-[25px] mr-2 my-2 2xl:mr-4 cursor-pointer">
+                  <Chip
+                    className="bg-[rgb(177,91,51)] rounded-md h-[25px] mr-2 my-2 2xl:mr-4 cursor-pointer"
+                    key={id}
+                  >
                     <span
                       className={`${styles.label} text-xl text-white md:text-sm font-Monserrat`}
                     >
@@ -106,7 +109,7 @@ const PromptDetailsCard = ({ promptData }: Props) => {
               })}
             </div>
             <br />
-            <Button className="w-full text-black bg-[rgb(255,100,26)]">
+            <Button className="w-full !text-indigo-950 text-xl md:font-semibold bg-[rgb(255,100,26)] font-Inter">
               Buy
             </Button>
           </div>

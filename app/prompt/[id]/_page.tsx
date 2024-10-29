@@ -12,12 +12,12 @@ type Props = {
 
 const PromptDetailsPage = ({ user, isSellerExist, promptData }: Props) => {
   return (
-    <div>
+    <div className="">
       <div className="shop-banner">
         <Header user={user} isSellerExist={isSellerExist} activeItem={2} />
-        <ShopBanner />
+        <ShopBanner promptData={promptData} />
       </div>
-      <div className="w-[95%] nd:w-[80%] xl:w-[85%] 2xl:w-[80%] auto">
+      <div className="w-[95%] nd:w-[80%] xl:w-[85%] 2xl:w-[80%] m-auto">
         <PromptDetails promptData={promptData} />
         <Divider className="mt-5 bg-[#ffffff14]" />
       </div>
